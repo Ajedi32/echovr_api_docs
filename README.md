@@ -135,13 +135,13 @@ An array of objects containing data used to instantiate the game's two teams. (S
 A human-readable team name. Usually either "ORANGE TEAM" or "BLUE TEAM", but that's subject to change, and may be different during LAN tournaments (though I've not yet confirmed this).
 
 ##### `teams[].possession`
-Indicates whether this team currently has posession of the disk.
+Indicates whether this team currently has possession of the disk.
 
 ##### `teams[].stats`
 An object containing data used to instantiate the team's current stats.
 
 ##### `teams[].stats.possession_time`
-Time in seconds that the subject posessed the disk.
+Time in seconds that the subject possessed the disk.
 
 ##### `teams[].stats.points`
 Points scored by the subject.
@@ -166,7 +166,7 @@ Number of times the subject successfully completed a pass
 TODO: API always returns zero for teams?
 
 ##### `teams[].stats.catches`
-Number of times the subject succssfully caught a pass by a team member
+Number of times the subject successfully caught a pass by a team member
 
 ##### `teams[].stats.steals`
 Number of times the subject stole the disk from the opposing team
@@ -197,7 +197,7 @@ A number representing ID of the player within the current game session.
 A unique number identifying the player across all game sessions.
 
 ##### `teams[].players[].possession`
-Indicates whether this player currently has posession of the disk.
+Indicates whether this player currently has possession of the disk.
 
 ##### `teams[].players[].position`
 The current position of the player within the arena
