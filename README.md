@@ -14,7 +14,7 @@ This returns a detailed representation of the current state of the match. The re
 
 Example response (formatted for readability):
 
-```
+```javascript
 {
   "sessionid": "0BD7D136-E487-11E8-9F32-F2801F1B9FD1",
   "game_clock_display": "00:45.65",
