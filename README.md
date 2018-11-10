@@ -14,84 +14,84 @@ This returns a detailed representation of the current state of the match. The re
 
 Example response (formatted for readability):
 
-```javascript
+<pre>
 {
-  "sessionid": "0BD7D136-E487-11E8-9F32-F2801F1B9FD1",
-  "game_clock_display": "00:45.65",
-  "game_clock": 45.659531,
-  "game_status": "playing",
-  "possession": [1, 0],
-  "teams": [
+  <a href="#sessionid">"sessionid"</a>: "0BD7D136-E487-11E8-9F32-F2801F1B9FD1",
+  <a href="#game_clock_display">"game_clock_display"</a>: "00:45.65",
+  <a href="#game_clock">"game_clock"</a>: 45.659531,
+  <a href="#game_status">"game_status"</a>: "playing",
+  <a href="#possession">"possession"</a>: [1, 0],
+  <a href="#teams">"teams"</a>: [
     {
-      "team": "BLUE TEAM",
-      "possession": false,
-      "stats": {
-        "points": 9,
-        "possession_time": 132.18958,
-        "interceptions": 0,
-        "blocks": 0,
-        "steals": 0,
-        "catches": 0,
-        "passes": 0,
-        "saves": 2,
-        "goals": 0,
-        "stuns": 29,
-        "assists": 2,
-        "shots_taken": 7
+      <a href="#teamsteam">"team"</a>: "BLUE TEAM",
+      <a href="#teamspossession">"possession"</a>: false,
+      <a href="#teamsstats">"stats"</a>: {
+        <a href="#teamsstatspoints">"points"</a>: 9,
+        <a href="#teamsstatspossession_time">"possession_time"</a>: 132.18958,
+        <a href="#teamsstatsinterceptions">"interceptions"</a>: 0,
+        <a href="#teamsstatsblocks">"blocks"</a>: 0,
+        <a href="#teamsstatssteals">"steals"</a>: 0,
+        <a href="#teamsstatscatches">"catches"</a>: 0,
+        <a href="#teamsstatspasses">"passes"</a>: 0,
+        <a href="#teamsstatssaves">"saves"</a>: 2,
+        <a href="#teamsstatsgoals">"goals"</a>: 0,
+        <a href="#teamsstatsstuns">"stuns"</a>: 29,
+        <a href="#teamsstatsassists">"assists"</a>: 2,
+        <a href="#teamsstatsshots_taken">"shots_taken"</a>: 7
       },
-      "players": [
+      <a href="teamsplayers">"players"</a>: [
         {
-          "name": "Bob",
-          "playerid": 0,
-          "userid": 9221405949665979,
-          "possession": false,
-          "position": [
+          <a href="#teamsplayersname">"name"</a>: "Bob",
+          <a href="#teamsplayersplayerid">"playerid"</a>: 0,
+          <a href="#teamsplayersuserid">"userid"</a>: 9221405949665979,
+          <a href="#teamsplayerspossession">"possession"</a>: false,
+          <a href="#teamsplayersposition">"position"</a>: [
             -11.089001,
             -0.70900005,
             -9.6930008
           ],
-          "stats": {
-            "possession_time": 78.645569,
-            "points": 5,
-            "saves": 1,
-            "goals": 0,
-            "stuns": 14,
-            "passes": 0,
-            "catches": 0,
-            "steals": 0,
-            "blocks": 0,
-            "interceptions": 0,
-            "assists": 1,
-            "shots_taken": 5
+          <a href="#teamsplayersstats">"stats"</a>: {
+            <a href="#teamsstatspoints">"points"</a>: 5,
+            <a href="#teamsstatspossession_time">"possession_time"</a>: 78.645569,
+            <a href="#teamsstatsinterceptions">"interceptions"</a>: 0,
+            <a href="#teamsstatsblocks">"blocks"</a>: 0,
+            <a href="#teamsstatssteals">"steals"</a>: 0,
+            <a href="#teamsstatscatches">"catches"</a>: 0,
+            <a href="#teamsstatspasses">"passes"</a>: 0,
+            <a href="#teamsstatssaves">"saves"</a>: 1,
+            <a href="#teamsstatsgoals">"goals"</a>: 0,
+            <a href="#teamsstatsstuns">"stuns"</a>: 14,
+            <a href="#teamsstatsassists">"assists"</a>: 1,
+            <a href="#teamsstatsshots_taken">"shots_taken"</a>: 5
           }
         }
         /* ...other blue players here */
       ]
     },
     {
-      "team": "ORANGE TEAM",
-      "possession": true,
+      <a href="#teamsteam">"team"</a>: "ORANGE TEAM",
+      <a href="#teamspossession">"possession"</a>: true,
       "stats": {
-        "points": 5,
-        "possession_time": 80.32605,
-        "interceptions": 0,
-        "blocks": 0,
-        "steals": 1,
-        "catches": 0,
-        "passes": 0,
-        "saves": 2,
-        "goals": 0,
-        "stuns": 12,
-        "assists": 1,
-        "shots_taken": 5
+        <a href="#teamsstatspoints">"points"</a>: 5,
+        <a href="#teamsstatspossession_time">"possession_time"</a>: 80.32605,
+        <a href="#teamsstatsinterceptions">"interceptions"</a>: 0,
+        <a href="#teamsstatsblocks">"blocks"</a>: 0,
+        <a href="#teamsstatssteals">"steals"</a>: 1,
+        <a href="#teamsstatscatches">"catches"</a>: 0,
+        <a href="#teamsstatspasses">"passes"</a>: 0,
+        <a href="#teamsstatssaves">"saves"</a>: 2,
+        <a href="#teamsstatsgoals">"goals"</a>: 0,
+        <a href="#teamsstatsstuns">"stuns"</a>: 12,
+        <a href="#teamsstatsassists">"assists"</a>: 1,
+        <a href="#teamsstatsshots_taken">"shots_taken"</a>: 5
       },
-      "players": [
+      <a href="teamsplayers">"players"</a>: [
         /* ...orange players here; see blue players section for example */
       ]
     }
   ]
 }
-```
+</pre>
 
 #### Details
 
