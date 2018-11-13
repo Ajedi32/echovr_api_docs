@@ -71,7 +71,7 @@ Example response (formatted for readability):
     {
       <a href="#teamsteam">"team"</a>: "ORANGE TEAM",
       <a href="#teamspossession">"possession"</a>: true,
-      "stats": {
+      <a href="#teamsstats">"stats"</a>: {
         <a href="#teamsstatspoints">"points"</a>: 5,
         <a href="#teamsstatspossession_time">"possession_time"</a>: 80.32605,
         <a href="#teamsstatsinterceptions">"interceptions"</a>: 0,
