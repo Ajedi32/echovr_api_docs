@@ -31,9 +31,9 @@ Example response (formatted for readability):
   <a href="#blue_points">"blue_points"</a>: 9,
   <a href="#orange_points">"orange_points"</a>: 5,
   <a href="#disc">"disc"</a>: {
-    <a href="#diskposition">"position"</a>: [0, 0, 0],
-    <a href="#diskvelocity">"velocity"</a>: [0, 0, 0],
-    <a href="#diskbounce_count">"bounce_count"</a>: 0
+    <a href="#discposition">"position"</a>: [0, 0, 0],
+    <a href="#discvelocity">"velocity"</a>: [0, 0, 0],
+    <a href="#discbounce_count">"bounce_count"</a>: 0
   },
   // TODO: Make this consistent with the other stats in the example.
   <a href="#last_score">"last_score"</a>: {
@@ -187,16 +187,16 @@ The current score of the blue team. This differs from [`teams[].stats.points`](#
 ##### `orange_points`
 The current score of the orange team. This differs from [`teams[].stats.points`](#teamsstatspoints) in that it includes points scored as self goals.
 
-##### `disk`
+##### `disc`
 An object representing the current state of the disk.
 
-##### `disk.position`
+##### `disc.position`
 An array representing the disk's [position](#vectors) within the area.
 
-##### `disk.velocity`
+##### `disc.velocity`
 An array representing the disk's [velocity](#vectors).
 
-##### `disk.bounce_count`
+##### `disc.bounce_count`
 The number of times the disk has bounced. (TODO: Since the last time someone grabbed it? Do headbutts count as bounces?)
 
 ##### `last_score`
