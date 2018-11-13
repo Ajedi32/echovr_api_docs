@@ -123,7 +123,7 @@ Possible values:
 - `"post_sudden_death"`
 
 ##### `possession`
-An arry of two integers representing which team currently possesses the disk.
+An array of two integers representing which team currently [possesses](#possession-1) the disk.
 
 TODO: Unclear exactly how this data is encoded.
 
@@ -135,13 +135,13 @@ An array of objects containing data used to instantiate the game's two teams. Th
 A human-readable team name. Usually either "ORANGE TEAM" or "BLUE TEAM", but if all the players on a team have the same team name (set by pressing F11 while in a match or the lobby) it will be that instead.
 
 ##### `teams[].possession`
-Indicates whether this team currently has possession of the disk.
+Indicates whether this team currently has [possession](#possession-1) of the disk.
 
 ##### `teams[].stats`
 An object containing data used to instantiate the team's current stats.
 
 ##### `teams[].stats.possession_time`
-Time in seconds that the subject possessed the disk.
+Time in seconds that the subject [possessed](#possession-1) the disk.
 
 ##### `teams[].stats.points`
 Points scored by the subject.
@@ -197,10 +197,32 @@ A number representing ID of the player within the current game session.
 A unique number identifying the player across all game sessions.
 
 ##### `teams[].players[].possession`
-Indicates whether this player currently has possession of the disk.
+Indicates whether this player currently has [possession](#possession-1) of the disk.
 
 ##### `teams[].players[].position`
-The current position of the player within the arena
+The current [position](#vectors) of the player within the arena
 
 ##### `teams[].players[].stats`
 An object containing data used to instantiate the player's current stats. See [`teams[].stats`](#teamsstats) for a list of available stats.
+
+### Concepts
+Throughout the API there are a number of concepts that get reused in multiple places. These concepts are documented in this section.
+
+#### Vectors
+Position, direction, and velocity are represented within the API as an array of [3D vector coordinates in Cartesian space](https://en.wikipedia.org/wiki/Euclidean_vector#In_Cartesian_space). That's a fancy way of saying the array contains three numbers, each representing a distance/speed in either the left-right (`x`), up-down (`y`), or forward-back (`z`) directions. These directions are arranged as `[x, y, z]` in the arrays returned by the API.
+
+Distance is measured in meters, and speed in meters per second. So, for example, a vector coordinate `[0, 1, 0]` could represent either a distance of 1 meter in the "up" direction, or a speed of 1 meter/second in the "up" direction.
+
+For vectors that contain a mix of several directions, you can calculate the total distance or speed (r) using a 3-dimensional version of the [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem): r<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>
+
+In Echo Arena, distances are measured from the center of the Arena, where the disk spawns (at `[0, 0, 0]`). Positive `z` is in the direction of the orange side of the arena, negative `z` is in the direction of the blue side of the arena. If you're on the blue side of the arena facing the orange team's goal, positive `x` would be towards your left, and negative `x` would be to your right (with left/right reversed for a player on the orange team's side of the arena facing the blue team's side). Positive `y` is "up" (relative to a player's orientation when they spawn) and negative `y` is "down".
+
+So, for example, a player located at [10.0, -5.0, -15.0] would be, from the perspective of someone sitting on the blue team's goal facing the orange team's goal, 10 meters to the left of the center of the arena, on the blue team's side, near the floor.
+
+The Arena is 80m long (counting from orange to blue launch tube exits), 30m wide (counting from the widest point of the side walls) and 20m tall (counting from the tallest part of the arena, in the trenches).
+
+#### Possession
+The API defines "possession" a little more broadly than you might expect (depending on what other sports you may be familiar with that use this term). Not only do players/teams that are currently holding the disk have possession, but teams also maintain possession for several (TODO: how many?) seconds after releasing the disk as well, unless the disk is recovered by the opposing team. If the disk is glowing with the color of a specific team, the game considers that team as having "possession".
+
+#### Session
+A "session" is what users typically think of as the "server" you're playing on. When you join a new match, a new session is created, and the session will remain active until all players leave. Sessions IDs are unique, and have no correspondence to the actual, physical or virtual server hardware that's hosting the game.
