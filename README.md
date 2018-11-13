@@ -8,6 +8,8 @@ In short, if you execute Echo VR with the `-http` argument an http server will r
 
 This repository aims to document all the functionality of this API.
 
+## API Endpoints
+
 ### GET /session
 
 This returns a detailed representation of the current state of the match. The response is JSON, with an additional [null byte](https://en.wikipedia.org/wiki/Null_character) at the end that you may need to trim off before feeding it to your JSON parser.
@@ -93,7 +95,7 @@ Example response (formatted for readability):
 }
 </pre>
 
-#### Details
+#### Properties
 
 The response is a JSON object, with the following properties:
 
@@ -205,10 +207,10 @@ The current [position](#vectors) of the player within the arena
 ##### `teams[].players[].stats`
 An object containing data used to instantiate the player's current stats. See [`teams[].stats`](#teamsstats) for a list of available stats.
 
-### Concepts
+## Concepts
 Throughout the API there are a number of concepts that get reused in multiple places. These concepts are documented in this section.
 
-#### Vectors
+### Vectors
 Position, direction, and velocity are represented within the API as an array of [3D vector coordinates in Cartesian space](https://en.wikipedia.org/wiki/Euclidean_vector#In_Cartesian_space). That's a fancy way of saying the array contains three numbers, each representing a distance/speed in either the left-right (`x`), up-down (`y`), or forward-back (`z`) directions. These directions are arranged as `[x, y, z]` in the arrays returned by the API.
 
 Distance is measured in meters, and speed in meters per second. So, for example, a vector coordinate `[0, 1, 0]` could represent either a distance of 1 meter in the "up" direction, or a speed of 1 meter/second in the "up" direction.
@@ -221,8 +223,8 @@ So, for example, a player located at [10.0, -5.0, -15.0] would be, from the pers
 
 The Arena is 80m long (counting from orange to blue launch tube exits), 30m wide (counting from the widest point of the side walls) and 20m tall (counting from the tallest part of the arena, in the trenches).
 
-#### Possession
+### Possession
 The API defines "possession" a little more broadly than you might expect (depending on what other sports you may be familiar with that use this term). Not only do players/teams that are currently holding the disk have possession, but teams also maintain possession for several (TODO: how many?) seconds after releasing the disk as well, unless the disk is recovered by the opposing team. If the disk is glowing with the color of a specific team, the game considers that team as having "possession".
 
-#### Session
+### Session
 A "session" is what users typically think of as the "server" you're playing on. When you join a new match, a new session is created, and the session will remain active until all players leave. Sessions IDs are unique, and have no correspondence to the actual, physical or virtual server hardware that's hosting the game.
