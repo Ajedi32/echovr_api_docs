@@ -129,10 +129,10 @@ TODO: Unclear exactly how this data is encoded.
 
 ##### `teams`
 
-An array of objects containing data used to instantiate the game's two teams. (See below for details.)
+An array of objects containing data used to instantiate the game's two teams. The first element in the array is always the blue team, while the second is always the orange team.
 
 ##### `teams[].team`
-A human-readable team name. Usually either "ORANGE TEAM" or "BLUE TEAM", but that's subject to change, and may be different during LAN tournaments (though I've not yet confirmed this).
+A human-readable team name. Usually either "ORANGE TEAM" or "BLUE TEAM", but if all the players on a team have the same team name (set by pressing F11 while in a match or the lobby) it will be that instead.
 
 ##### `teams[].possession`
 Indicates whether this team currently has possession of the disk.
