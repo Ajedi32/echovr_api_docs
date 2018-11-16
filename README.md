@@ -18,11 +18,33 @@ Example response (formatted for readability):
 
 <pre>
 {
+  <a href="#client_name">"client_name"</a>: "ajedi32",
   <a href="#sessionid">"sessionid"</a>: "0BD7D136-E487-11E8-9F32-F2801F1B9FD1",
+  <a href="#match_type">"match_type"</a>: "Echo_Arena_Private",
+  <a href="#map_name">"map_name"</a>: "mpl_arena_a",
+  <a href="#private_match">"private_match"</a>: true,
+  <a href="#tournament_match">"tournament_match"</a>: false,
   <a href="#game_clock_display">"game_clock_display"</a>: "00:45.65",
   <a href="#game_clock">"game_clock"</a>: 45.659531,
   <a href="#game_status">"game_status"</a>: "playing",
   <a href="#possession">"possession"</a>: [1, 0],
+  <a href="#blue_points">"blue_points"</a>: 9,
+  <a href="#orange_points">"orange_points"</a>: 5,
+  <a href="#disc">"disc"</a>: {
+    <a href="#discposition">"position"</a>: [0, 0, 0],
+    <a href="#discvelocity">"velocity"</a>: [0, 0, 0],
+    <a href="#discbounce_count">"bounce_count"</a>: 0
+  },
+  // TODO: Make this consistent with the other stats in the example.
+  <a href="#last_score">"last_score"</a>: {
+    <a href="#last_scoredisc_speed">"disc_speed"</a>: 0,
+    <a href="#last_scoreteam">"team"</a>: "blue",
+    <a href="#last_scoregoal_type">"goal_type"</a>: "[NO GOAL]",
+    <a href="#last_scorepoint_amount">"point_amount"</a>: 0,
+    <a href="#last_scoredistance_thrown">"distance_thrown"</a>: 0,
+    <a href="#last_scoreperson_scored">"person_scored"</a>: "[INVALID]",
+    <a href="#last_scoreassist_scored">"assist_scored"</a>: "[INVALID]"
+  },
   <a href="#teams">"teams"</a>: [
     {
       <a href="#teamsteam">"team"</a>: "BLUE TEAM",
@@ -46,12 +68,19 @@ Example response (formatted for readability):
           <a href="#teamsplayersname">"name"</a>: "Bob",
           <a href="#teamsplayersplayerid">"playerid"</a>: 0,
           <a href="#teamsplayersuserid">"userid"</a>: 9221405949665979,
+          <a href="#teamsplayerslevel">"level"</a>: 16,
+          <a href="#teamsplayersnumber">"number"</a>: 88,
           <a href="#teamsplayerspossession">"possession"</a>: false,
-          <a href="#teamsplayersposition">"position"</a>: [
-            -11.089001,
-            -0.70900005,
-            -9.6930008
-          ],
+          <a href="#teamsplayersstunned">"stunned"</a>: false,
+          <a href="#teamsplayersblocking">"blocking"</a>: false,
+          <a href="#teamsplayersinvulnerable">"invulnerable"</a>: false,
+          <a href="#teamsplayersposition">"position"</a>: [0.001, -2.2710001, 78.183006],
+          <a href="#teamsplayersvelocity">"velocity"</a>: [0, 0, 0],
+          <a href="#teamsplayerslhand">"lhand"</a>: [0.13800001, -2.3000002, 78.131004],
+          <a href="#teamsplayersrhand">"rhand"</a>: [0.21600001, -2.3150001, 78.168007],
+          <a href="#teamsplayersforward">"forward"</a>: [0, 0.25800002, -0.96600002],
+          <a href="#teamsplayersleft">"left"</a>: [-1, 0.014, 0.0040000002],
+          <a href="#teamsplayersup">"up"</a>: [0.014, 0.96600002, 0.25800002],
           <a href="#teamsplayersstats">"stats"</a>: {
             <a href="#teamsstatspoints">"points"</a>: 5,
             <a href="#teamsstatspossession_time">"possession_time"</a>: 78.645569,
@@ -99,8 +128,35 @@ Example response (formatted for readability):
 
 The response is a JSON object, with the following properties:
 
+##### `client_name`
+The username of the currently signed-in user.
+
 ##### `sessionid`
 A 128-bit string-encoded GUID.
+
+##### `match_type`
+Represents the type of match being played.
+
+Possible values:
+
+- `"Echo_Arena_Private"`
+- `"INVALID GAMETYPE"`
+- TODO: What else?
+
+##### `map_name`
+Represents the current "map" (environment) the user is playing in.
+
+Possible values:
+
+- `"mpl_arena_a"` - Standard Echo Arena map
+- `"INVALID LEVEL"`
+- TODO: What else?
+
+##### `private_match`
+Whether the current session is a private match.
+
+##### `tournament_match`
+Whether the current session is being used for an official tournament orchestrated in collaboration with the Echo Arena developers. This is [for possible future integration with ESL and other organized tournaments](https://discordapp.com/channels/326412222119149578/506931756675497986/510566303367430145).
 
 ##### `game_clock_display`
 A human-readable representation of the current game clock time.
@@ -129,8 +185,65 @@ An array of two integers representing which team currently [possesses](#possessi
 
 TODO: Unclear exactly how this data is encoded.
 
-##### `teams`
+##### `blue_points`
+The current score of the blue team. This differs from [`teams[].stats.points`](#teamsstatspoints) in that it includes points scored as self goals.
 
+##### `orange_points`
+The current score of the orange team. This differs from [`teams[].stats.points`](#teamsstatspoints) in that it includes points scored as self goals.
+
+##### `disc`
+An object representing the current state of the disk.
+
+##### `disc.position`
+An array representing the disk's [position](#vectors) within the area.
+
+##### `disc.velocity`
+An array representing the disk's [velocity](#vectors).
+
+##### `disc.bounce_count`
+The number of times the disk has bounced. (TODO: Since the last time someone grabbed it? Do headbutts count as bounces?)
+
+##### `last_score`
+An object containing facts and statistics related to the last goal that that was scored in-game. (This is roughly the same information displayed on the Shield after a goal.)
+
+Note that in some cases (such as when the disk is slapped into the goal) bugs may result in this information being inaccurate.
+
+##### `last_score.disc_speed`
+The speed of the disk in meters/second when it impacted the goal. This is `0` by default when no goal has been scored.
+
+##### `last_score.team`
+The team that scored. This is `"blue"` by default when no goal has been scored. Note that in the case of self goals, this value will still represent the team receiving points for the goal, not the team of the player who actually scored the goal. (TODO: This is probably accurate, but check to make sure.)
+
+Possible values:
+
+- `"blue"`
+- `"orange"`
+
+##### `last_score.goal_type`
+A human-readable explanation of the type of goal scored. This is `"[NO GOAL]"` by default when no goal has been scored.
+
+Possible values:
+
+- `"[NO GOAL]"`
+- `"SLAM DUNK"`
+- `"INSIDE SHOT"`
+- `"LONG SHOT"`
+- `"BOUNCE SHOT"`
+- `"LONG BOUNCE SHOT"`
+
+##### `last_score.point_amount`
+The number of points scored (2 or 3). This is `0` by default when no goal has been scored.
+
+##### `last_score.distance_thrown`
+The distance the goal was scored from. This is `0` by default when no goal has been scored.
+
+##### `last_score.person_scored`
+The username of the player who scored the goal. This is `"[INVALID]"` by default when no goal has been scored since you first joined the match.
+
+##### `last_score.assist_scored`
+The username of the player who assisted the goal. This is `"[INVALID]"` by default when no goal has been scored since you first joined the match, or when a goal was scored, but no player was credited with the assist.
+
+##### `teams`
 An array of objects containing data used to instantiate the game's two teams. The first element in the array is always the blue team, while the second is always the orange team.
 
 ##### `teams[].team`
@@ -198,11 +311,46 @@ A number representing ID of the player within the current game session.
 ##### `teams[].players[].userid`
 A unique number identifying the player across all game sessions.
 
+##### `teams[].players[].level`
+A number (1-50) representing the player's experience "level". New accounts start as level 1, and will usually reach level 50 after a few hundred games in public matchmaking.
+
+Note that there a rare bug where this number may be 0 in the UI in some cases; it's possible this bug may also affect the API (though this has yet to be verified).
+
+##### `teams[].players[].number`
+The number a player chose for themselves in the customization room.
+
 ##### `teams[].players[].possession`
 Indicates whether this player currently has [possession](#possession-1) of the disk.
 
+##### `teams[].players[].stunned`
+Whether the player is currently stunned.
+
+##### `teams[].players[].blocking`
+Whether the player is currently blocking (and will therefore deflect stuns).
+
+##### `teams[].players[].invulnerable`
+Whether or not the player is currently immune to stuns. Players will be in this state for several (TODO: how many?) seconds after they are stunned.
+
 ##### `teams[].players[].position`
 The current [position](#vectors) of the player within the arena
+
+##### `teams[].players[].velocity`
+The current [velocity](#vectors) (speed and direction of movement) of the player.
+
+##### `teams[].players[].lhand`
+The [position](#vectors) of the player's left hand within the Arena.
+
+##### `teams[].players[].rhand`
+The [position](#vectors) of the player's right hand within the Arena.
+
+##### `teams[].players[].forward`
+The [direction](#vectors) that the player's head is facing.
+
+##### `teams[].players[].left`
+The [direction](#vectors) that the left side of the player's head is facing.
+
+##### `teams[].players[].up`
+The [direction](#vectors) that the top side of the player's head is facing.
 
 ##### `teams[].players[].stats`
 An object containing data used to instantiate the player's current stats. See [`teams[].stats`](#teamsstats) for a list of available stats.
