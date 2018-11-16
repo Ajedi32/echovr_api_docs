@@ -140,12 +140,16 @@ Represents the type of match being played.
 Possible values:
 
 - `"Echo_Arena_Private"`
+- `"INVALID GAMETYPE"`
 - TODO: What else?
 
 ##### `map_name`
 Represents the current "map" (environment) the user is playing in.
 
+Possible values:
+
 - `"mpl_arena_a"` - Standard Echo Arena map
+- `"INVALID LEVEL"`
 - TODO: What else?
 
 ##### `private_match`
@@ -221,8 +225,11 @@ A human-readable explanation of the type of goal scored. This is `"[NO GOAL]"` b
 Possible values:
 
 - `"[NO GOAL]"`
-- `"BOUNCE SHOT"`???
-- TODO: What else?
+- `"SLAM DUNK"`
+- `"INSIDE SHOT"`
+- `"LONG SHOT"`
+- `"BOUNCE SHOT"`
+- `"LONG BOUNCE SHOT"`
 
 ##### `last_score.point_amount`
 The number of points scored (2 or 3). This is `0` by default when no goal has been scored.
