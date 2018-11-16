@@ -238,13 +238,12 @@ The number of points scored (2 or 3). This is `0` by default when no goal has be
 The distance the goal was scored from. This is `0` by default when no goal has been scored.
 
 ##### `last_score.person_scored`
-The username of the player who scored the goal. This is `"[INVALID]"` by default when no goal has been scored. (TODO: Is "[INVALID]" a potentially valid player name?)
+The username of the player who scored the goal. This is `"[INVALID]"` by default when no goal has been scored since you first joined the match.
 
 ##### `last_score.assist_scored`
-The username of the player who assisted the goal. This is `"[INVALID]"` by default when no goal has been scored. (TODO: What about when a goal was scored with no assist?)
+The username of the player who assisted the goal. This is `"[INVALID]"` by default when no goal has been scored since you first joined the match, or when a goal was scored, but no player was credited with the assist.
 
 ##### `teams`
-
 An array of objects containing data used to instantiate the game's two teams. The first element in the array is always the blue team, while the second is always the orange team.
 
 ##### `teams[].team`
