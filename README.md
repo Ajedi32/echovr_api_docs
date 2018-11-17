@@ -63,7 +63,7 @@ Example response (formatted for readability):
         <a href="#teamsstatsassists">"assists"</a>: 2,
         <a href="#teamsstatsshots_taken">"shots_taken"</a>: 7
       },
-      <a href="teamsplayers">"players"</a>: [
+      <a href="#teamsplayers">"players"</a>: [
         {
           <a href="#teamsplayersname">"name"</a>: "Bob",
           <a href="#teamsplayersplayerid">"playerid"</a>: 0,
