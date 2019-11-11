@@ -4,7 +4,13 @@ Unofficial documentation for Echo VR's HTTP API.
 
 ## Summary
 
-In short, if you execute Echo VR with the `-http` argument an http server will run during matches at `http://127.0.0.1:80/`. You can then query that server to access various information about the state of the match in progress.
+Echo Arena has an HTTP API available for querying current game state. This API
+listens locally on port 80 (`http://127.0.0.1:80/session`). This API is always
+on and does not require any options to enable it.
+
+Note that if any other service is alredy bound to this (TCP) port, which often
+happens on Windows, Echo will not be able to bind to it. To kill any services
+using it, run `net stop HTTP` in an administrator command prompt.
 
 This repository aims to document all the functionality of this API.
 
