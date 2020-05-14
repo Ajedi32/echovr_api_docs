@@ -5,7 +5,7 @@ Unofficial documentation for Echo VR's HTTP API.
 ## Summary
 
 Echo Arena has an HTTP API available for querying current game state. This API
-listens locally on port 80 (`http://127.0.0.1:80/session`). This API is always
+listens locally on port 6721 (`http://127.0.0.1:6721/session`). This API is always
 on and does not require any options to enable it.
 
 Note that if any other service is alredy bound to this (TCP) port, which often
@@ -146,6 +146,7 @@ Represents the type of match being played.
 Possible values:
 
 - `"Echo_Arena_Private"`
+- `"Social_2.0"`
 - `"INVALID GAMETYPE"`
 - TODO: What else?
 
@@ -155,6 +156,7 @@ Represents the current "map" (environment) the user is playing in.
 Possible values:
 
 - `"mpl_arena_a"` - Standard Echo Arena map
+- `"mpl_lobby_b2"` - Lobby
 - `"INVALID LEVEL"`
 - TODO: What else?
 
@@ -279,12 +281,12 @@ Number of times the subject has stunned the opposing team.
 ##### `teams[].stats.goals`
 Number of goals scored by the subject.
 
-TODO: API always returns zero for teams?
+API always returns zero for teams
 
 ##### `teams[].stats.passes`
 Number of times the subject successfully completed a pass
 
-TODO: API always returns zero for teams?
+API always returns zero for teams
 
 ##### `teams[].stats.catches`
 Number of times the subject successfully caught a pass by a team member
@@ -295,12 +297,12 @@ Number of times the subject stole the disk from the opposing team
 ##### `teams[].stats.blocks`
 Number of times the subject blocked a punch
 
-TODO: API always returns zero for teams?
+API always returns zero for teams
 
 ##### `teams[].stats.interceptions`
 Number of times the subject intercepted a pass by the opposing team
 
-TODO: API always returns zero for teams?
+API always returns zero for teams
 
 ##### `teams[].stats.shots_taken`
 Number of times the subject attempted a shot on goal
@@ -335,7 +337,7 @@ Whether the player is currently stunned.
 Whether the player is currently blocking (and will therefore deflect stuns).
 
 ##### `teams[].players[].invulnerable`
-Whether or not the player is currently immune to stuns. Players will be in this state for several (TODO: how many?) seconds after they are stunned.
+Whether or not the player is currently immune to stuns. Players will be in this state for 3 seconds after they are stunned.
 
 ##### `teams[].players[].position`
 The current [position](#vectors) of the player within the arena
