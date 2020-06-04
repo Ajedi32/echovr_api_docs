@@ -18,7 +18,7 @@ This repository aims to document all the functionality of this API.
 
 ### GET /session
 
-This returns a detailed representation of the current state of the match. The response is JSON, with an additional [null byte](https://en.wikipedia.org/wiki/Null_character) at the end that you may need to trim off before feeding it to your JSON parser.
+This returns a detailed representation of the current state of the match. The response is a JSON string, which can be parsed with any standard JSON parser.
 
 Example response (formatted for readability):
 
