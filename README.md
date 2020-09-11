@@ -40,10 +40,10 @@ Example response (formatted for readability):
   <a href="#blue_restart_request">"blue_team_restart_request"</a>: 0,
   <a href="#sessionip">"sessionip"</a>: "204.74.226.94",
   <a href="#player">"player"</a>: {
-    <a href="#player_vr_left">"vr_left"</a>: [1, 0, 0],
-    <a href="#player_vr_position">"vr_position"</a>: [0, 0, 0],
-    <a href="#player_vr_forward">"vr_forward"</a>: [0, 0, 1],
-    <a href="#player_vr_up">"vr_up"</a>: [0, 1, 0]
+    <a href="#playervr_left">"vr_left"</a>: [1, 0, 0],
+    <a href="#playervr_position">"vr_position"</a>: [0, 0, 0],
+    <a href="#playervr_forward">"vr_forward"</a>: [0, 0, 1],
+    <a href="#playervr_up">"vr_up"</a>: [0, 1, 0]
   },
   <a href="#disc">"disc"</a>: {
     <a href="#discposition">"position"</a>: [0, 0, 0],
@@ -153,7 +153,7 @@ Example response (formatted for readability):
         <a href="#teamsstatsassists">"assists"</a>: 1,
         <a href="#teamsstatsshots_taken">"shots_taken"</a>: 5
       },
-      <a href="teamsplayers">"players"</a>: [
+      <a href="#teamsplayers">"players"</a>: [
         /* ...orange players here; see blue players section for example */
       ]
     },
@@ -174,7 +174,7 @@ Example response (formatted for readability):
         <a href="#teamsstatsassists">"assists"</a>: 0,
         <a href="#teamsstatsshots_taken">"shots_taken"</a>: 0
       },
-      <a href="teamsplayers">"players"</a>: [
+      <a href="#teamsplayers">"players"</a>: [
         /* ...spectators here; see blue players section for example */
       ]
     }
