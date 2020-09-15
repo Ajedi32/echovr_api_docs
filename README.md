@@ -36,8 +36,8 @@ Example response (formatted for readability):
   <a href="#possession">"possession"</a>: [1, 0],
   <a href="#blue_points">"blue_points"</a>: 9,
   <a href="#orange_points">"orange_points"</a>: 5,
-  <a href="#orange_restart_request">"orange_team_restart_request"</a>: 0,
-  <a href="#blue_restart_request">"blue_team_restart_request"</a>: 0,
+  <a href="#orange_team_restart_request">"orange_team_restart_request"</a>: 0,
+  <a href="#blue_team_restart_request">"blue_team_restart_request"</a>: 0,
   <a href="#sessionip">"sessionip"</a>: "204.74.226.94",
   <a href="#player">"player"</a>: {
     <a href="#playervr_left">"vr_left"</a>: [1, 0, 0],
