@@ -36,18 +36,30 @@ Example response (formatted for readability):
   <a href="#possession">"possession"</a>: [1, 0],
   <a href="#blue_points">"blue_points"</a>: 9,
   <a href="#orange_points">"orange_points"</a>: 5,
+  <a href="#orange_team_restart_request">"orange_team_restart_request"</a>: 0,
+  <a href="#blue_team_restart_request">"blue_team_restart_request"</a>: 0,
+  <a href="#sessionip">"sessionip"</a>: "204.74.226.94",
+  <a href="#player">"player"</a>: {
+    <a href="#playervr_left">"vr_left"</a>: [1, 0, 0],
+    <a href="#playervr_position">"vr_position"</a>: [0, 0, 0],
+    <a href="#playervr_forward">"vr_forward"</a>: [0, 0, 1],
+    <a href="#playervr_up">"vr_up"</a>: [0, 1, 0]
+  },
   <a href="#disc">"disc"</a>: {
     <a href="#discposition">"position"</a>: [0, 0, 0],
+    <a href="#discforward">"forward"</a>: [0, 0, 1],
+    <a href="#discleft">"left"</a>: [1, 0, 0],
+    <a href="#discup">"up"</a>: [0, 1, 0],
     <a href="#discvelocity">"velocity"</a>: [0, 0, 0],
     <a href="#discbounce_count">"bounce_count"</a>: 0
   },
   // TODO: Make this consistent with the other stats in the example.
   <a href="#last_score">"last_score"</a>: {
-    <a href="#last_scoredisc_speed">"disc_speed"</a>: 0,
+    <a href="#last_scoredisc_speed">"disc_speed"</a>: 0.0,
     <a href="#last_scoreteam">"team"</a>: "blue",
     <a href="#last_scoregoal_type">"goal_type"</a>: "[NO GOAL]",
     <a href="#last_scorepoint_amount">"point_amount"</a>: 0,
-    <a href="#last_scoredistance_thrown">"distance_thrown"</a>: 0,
+    <a href="#last_scoredistance_thrown">"distance_thrown"</a>: 0.0,
     <a href="#last_scoreperson_scored">"person_scored"</a>: "[INVALID]",
     <a href="#last_scoreassist_scored">"assist_scored"</a>: "[INVALID]"
   },
@@ -74,19 +86,38 @@ Example response (formatted for readability):
           <a href="#teamsplayersname">"name"</a>: "Bob",
           <a href="#teamsplayersplayerid">"playerid"</a>: 0,
           <a href="#teamsplayersuserid">"userid"</a>: 9221405949665979,
-          <a href="#teamsplayerslevel">"level"</a>: 16,
           <a href="#teamsplayersnumber">"number"</a>: 88,
-          <a href="#teamsplayerspossession">"possession"</a>: false,
+          <a href="#teamsplayerslevel">"level"</a>: 16,
           <a href="#teamsplayersstunned">"stunned"</a>: false,
-          <a href="#teamsplayersblocking">"blocking"</a>: false,
+          <a href="#teamsplayersping">"ping"</a>: 75,
           <a href="#teamsplayersinvulnerable">"invulnerable"</a>: false,
-          <a href="#teamsplayersposition">"position"</a>: [0.001, -2.2710001, 78.183006],
+          <a href="#teamsplayerspossession">"possession"</a>: false,
+          <a href="#teamsplayersblocking">"blocking"</a>: false,
+          <a href="#teamsplayershead">"head"</a>: {
+          	<a href="#teamsplayersheadposition">"position"</a>: [1.9080001, -0.80900002, -7.9890003],
+          	<a href="#teamsplayersheadforward">"forward"</a>: [-0.34600002, -0.41700003, -0.84100002],
+          	<a href="#teamsplayersheadleft">"left"</a>: [-0.93600005, 0.21200001, 0.28],
+          	<a href="#teamsplayersheadup">"up"</a>: [0.061000004, 0.88400006, -0.46300003]
+          },
+          <a href="#teamsplayersbody">"body"</a>: {
+          	<a href="#teamsplayersbodyposition">"position"</a>: [1.9080001, -0.80900002, -7.9890003],
+          	<a href="#teamsplayersbodyforward">"forward"</a>: [-0.208, 0.36600003, -0.90700006],
+          	<a href="#teamsplayersbodyleft">"left"</a>: [-0.91400003, 0.257, 0.31400001],
+          	<a href="#teamsplayersbodyup">"up"</a>: [0.34800002, 0.89400005, 0.28100002]
+          },
           <a href="#teamsplayersvelocity">"velocity"</a>: [0, 0, 0],
-          <a href="#teamsplayerslhand">"lhand"</a>: [0.13800001, -2.3000002, 78.131004],
-          <a href="#teamsplayersrhand">"rhand"</a>: [0.21600001, -2.3150001, 78.168007],
-          <a href="#teamsplayersforward">"forward"</a>: [0, 0.25800002, -0.96600002],
-          <a href="#teamsplayersleft">"left"</a>: [-1, 0.014, 0.0040000002],
-          <a href="#teamsplayersup">"up"</a>: [0.014, 0.96600002, 0.25800002],
+          <a href="#teamsplayerslhand">"lhand"</a>: {
+          	<a href="#teamsplayerslhandpos">"pos"</a>: [-2.7710001, 2.2950001, -6.4300003],
+          	<a href="#teamsplayerslhandforward">"forward"</a>: [-0.61800003, 0.60500002, -0.50200003],
+          	<a href="#teamsplayerslhandleft">"left"</a>: [0.147, 0.71600002, 0.68300003],
+          	<a href="#teamsplayerslhandup">"up"</a>: [0.77200001, 0.34800002, -0.53100002]
+          },
+          <a href="#teamsplayersrhand">"rhand"</a>: {
+          	<a href="#teamsplayersrhandpos">"pos"</a>: [0.21600001, -2.3150001, 78.168007],
+          	<a href="#teamsplayersrhandforward">"forward"</a>: [-0.69100004, 0.112, -0.71400005 ],
+          	<a href="#teamsplayersrhandleft">"left"</a>: [-0.574, -0.68500006, 0.44800001],
+          	<a href="#teamsplayersrhandup">"up"</a>: [-0.43900001, 0.72000003, 0.53800005]
+          },
           <a href="#teamsplayersstats">"stats"</a>: {
             <a href="#teamsstatspoints">"points"</a>: 5,
             <a href="#teamsstatspossession_time">"possession_time"</a>: 78.645569,
@@ -122,8 +153,29 @@ Example response (formatted for readability):
         <a href="#teamsstatsassists">"assists"</a>: 1,
         <a href="#teamsstatsshots_taken">"shots_taken"</a>: 5
       },
-      <a href="teamsplayers">"players"</a>: [
+      <a href="#teamsplayers">"players"</a>: [
         /* ...orange players here; see blue players section for example */
+      ]
+    },
+    {
+      <a href="#teamsteam">"team"</a>: "SPECTATORS",
+      <a href="#teamspossession">"possession"</a>: false,
+      <a href="#teamsstats">"stats"</a>: {
+        <a href="#teamsstatspoints">"points"</a>: 0,
+        <a href="#teamsstatspossession_time">"possession_time"</a>: 0.0,
+        <a href="#teamsstatsinterceptions">"interceptions"</a>: 0,
+        <a href="#teamsstatsblocks">"blocks"</a>: 0,
+        <a href="#teamsstatssteals">"steals"</a>: 0,
+        <a href="#teamsstatscatches">"catches"</a>: 0,
+        <a href="#teamsstatspasses">"passes"</a>: 0,
+        <a href="#teamsstatssaves">"saves"</a>: 0,
+        <a href="#teamsstatsgoals">"goals"</a>: 0,
+        <a href="#teamsstatsstuns">"stuns"</a>: 0,
+        <a href="#teamsstatsassists">"assists"</a>: 0,
+        <a href="#teamsstatsshots_taken">"shots_taken"</a>: 0
+      },
+      <a href="#teamsplayers">"players"</a>: [
+        /* ...spectators here; see blue players section for example */
       ]
     }
   ]
@@ -146,6 +198,7 @@ Represents the type of match being played.
 Possible values:
 
 - `"Echo_Arena_Private"`
+- `"Echo_Arena"`
 - `"Social_2.0"`
 - `"INVALID GAMETYPE"`
 - TODO: What else?
@@ -199,11 +252,44 @@ The current score of the blue team. This differs from [`teams[].stats.points`](#
 ##### `orange_points`
 The current score of the orange team. This differs from [`teams[].stats.points`](#teamsstatspoints) in that it includes points scored as self goals.
 
+##### `orange_team_restart_request`
+`True` when the orange team has a restart request pending.
+
+##### `blue_team_restart_request`
+`True` when the blue team has a restart request pending.
+
+##### `sessionip`
+The IP address of the current game server.
+
+##### `player`
+An object representing the current state of the local VR player. This is used for positions of the player within their playspace.
+
+##### `player.vr_left`
+The [direction](#vectors) that the left side of the player's head is facing within their playspace.
+
+##### `player.vr_position`
+An array representing the player's [position](#vectors) within their playspace.
+
+##### `player.vr_forward`
+The [direction](#vectors) that the player's head is facing within their playspace.
+
+##### `player.vr_up`
+The [direction](#vectors) that the top side of the player's head is facing within their playspace.
+
 ##### `disc`
 An object representing the current state of the disk.
 
 ##### `disc.position`
-An array representing the disk's [position](#vectors) within the area.
+An array representing the disk's [position](#vectors) within the arena.
+
+##### `disc.forward`
+The [direction](#vectors) that the disc is facing.
+
+##### `disc.left`
+The [direction](#vectors) that the left side of the disc is facing.
+
+##### `disc.up`
+The [direction](#vectors) that the top of the disc is facing.
 
 ##### `disc.velocity`
 An array representing the disk's [velocity](#vectors).
@@ -333,32 +419,77 @@ Indicates whether this player currently has [possession](#possession-1) of the d
 ##### `teams[].players[].stunned`
 Whether the player is currently stunned.
 
+##### `teams[].players[].ping`
+Current ping (network latency to server) of this player.
+
 ##### `teams[].players[].blocking`
 Whether the player is currently blocking (and will therefore deflect stuns).
 
 ##### `teams[].players[].invulnerable`
 Whether or not the player is currently immune to stuns. Players will be in this state for 3 seconds after they are stunned.
 
-##### `teams[].players[].position`
-The current [position](#vectors) of the player within the arena
-
 ##### `teams[].players[].velocity`
 The current [velocity](#vectors) (speed and direction of movement) of the player.
 
 ##### `teams[].players[].lhand`
-The [position](#vectors) of the player's left hand within the Arena.
+An object containing position and rotation data for the left hand.
+
+##### `teams[].players[].lhand.pos`
+The [position](#vectors) of the player's left hand within the arena.
+
+##### `teams[].players[].lhand.forward`
+The [direction](#vectors) that the player's left hand is facing.
+
+##### `teams[].players[].lhand.left`
+The [direction](#vectors) that the left side of the player's left hand is facing.
+
+##### `teams[].players[].lhand.up`
+The [direction](#vectors) that the top side of the player's left hand is facing.
 
 ##### `teams[].players[].rhand`
-The [position](#vectors) of the player's right hand within the Arena.
+An object containing position and rotation data for the right hand.
 
-##### `teams[].players[].forward`
+##### `teams[].players[].rhand.pos`
+The [position](#vectors) of the player's right hand within the arena.
+
+##### `teams[].players[].rhand.forward`
+The [direction](#vectors) that the player's right hand is facing.
+
+##### `teams[].players[].rhand.left`
+The [direction](#vectors) that the left side of the player's right hand is facing.
+
+##### `teams[].players[].rhand.up`
+The [direction](#vectors) that the top side of the player's right hand is facing.
+
+##### `teams[].players[].head`
+An object containing position and rotation of the head of the player
+
+##### `teams[].players[].head.position`
+The [position](#vectors) of the player's head in the arena.
+
+##### `teams[].players[].head.forward`
 The [direction](#vectors) that the player's head is facing.
 
-##### `teams[].players[].left`
+##### `teams[].players[].head.left`
 The [direction](#vectors) that the left side of the player's head is facing.
 
-##### `teams[].players[].up`
+##### `teams[].players[].head.up`
 The [direction](#vectors) that the top side of the player's head is facing.
+
+##### `teams[].players[].body`
+An object containing position and rotation of the body of the player
+
+##### `teams[].players[].body.position`
+The [position](#vectors) of the player's body in the arena.
+
+##### `teams[].players[].body.forward`
+The [direction](#vectors) that the player's body is facing.
+
+##### `teams[].players[].body.left`
+The [direction](#vectors) that the left side of the player's body is facing.
+
+##### `teams[].players[].body.up`
+The [direction](#vectors) that the top side of the player's body is facing.
 
 ##### `teams[].players[].stats`
 An object containing data used to instantiate the player's current stats. See [`teams[].stats`](#teamsstats) for a list of available stats.
