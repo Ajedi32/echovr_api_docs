@@ -621,13 +621,17 @@ Indicates whether this player currently has possession of the disk.
 The item or object the player is holding in their left hand.
 
 Possible values:
-* TBC
+* `"disc"`
+* player id (`"0"`, `"1"`)
+* `"geo"`
 
 #### `teams[].players[].holding_right`
 The item or object the player is holding in their right hand.
 
 Possible values:
-* TBC
+* `"disc"`
+* player id (`"0"`, `"1"`)
+* `"geo"`
 
 #### `teams[].players[].blocking`
 Whether the player is currently blocking (and will therefore deflect stuns).
@@ -741,5 +745,4 @@ This section is for community suggestions and common issues
 * find values of possession
 * last_score.team value confirmation
 * check if teams[].players[].number still applies without number decal
-* holding_left/right
 * Keep updating
