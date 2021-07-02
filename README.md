@@ -29,82 +29,82 @@ Example response (formatted for readability):
     <a href="#map_name">"map_name"</a>: "mpl_arena_a",
     <a href="#game_clock">"game_clock"</a>: 215.09978,
     <a href="#game_clock_display">"game_clock_display"</a>: "03:35.09",
-    "private_match": false,
-    "total_round_count": 1,
-    "blue_round_score": 0,
-    "orange_round_score": 0,
-    "blue_points": 2,
-    "orange_points": 4,
-    "tournament_match": false,
-    "blue_team_restart_request": 0,
-    "orange_team_restart_request": 0,
-    "right_shoulder_pressed": 0.0,
-    "right_shoulder_pressed2": 0.0,
-    "left_shoulder_pressed": 0.0,
-    "left_shoulder_pressed2": 0.0,
-    "game_status": "score",
-    "pause": {
-        "paused_state": "unpaused",
-        "unpaused_team": "none",
-        "paused_requested_team": "none",
-        "unpaused_timer": 0.0,
-        "paused_timer": 0.0
+    <a href="#private_match">"private_match"</a>: false,
+    <a href="#total_round_count">"total_round_count"</a>: 1,
+    <a href="#blue_round_score">"blue_round_score"</a>: 0,
+    <a href="#orange_round_count">"orange_round_score"</a>: 0,
+    <a href="#blue_points">"blue_points"</a>: 2,
+    <a href="#orange_points">"orange_points"</a>: 4,
+    <a href="#tournament_match">"tournament_match"</a>: false,
+    <a href="#blue_team_restart_request">"blue_team_restart_request"</a>: 0,
+    <a href="#orange_team_restart_request">"orange_team_restart_request"</a>: 0,
+    <a href="#right_shoulder_pressed">"right_shoulder_pressed"</a>: 0.0,
+    <a href="#right_shoulder_pressed2">"right_shoulder_pressed2"</a>: 0.0,
+    <a href="#left_shoulder_pressed">"left_shoulder_pressed"</a>: 0.0,
+    <a href="#left_shoulder_pressed2">"left_shoulder_pressed2"</a>: 0.0,
+    <a href="#game_status">"game_status"</a>: "score",
+    <a href="#pause">"pause"</a>: {
+        <a href="#pausepaused_state">"paused_state"</a>: "unpaused",
+        <a href="#pauseunpaused_team">"unpaused_team"</a>: "none",
+        <a href="#pausepaused_requested_team">"paused_requested_team"</a>: "none",
+        <a href="#pauseunpaused_timer">"unpaused_timer"</a>: 0.0,
+        <a href="#pausepaused_timer">"paused_timer"</a>: 0.0
     },
-    "possession": [
+    <a href="#possession">"possession"</a>: [
         1,
         0
     ],
-    "last_throw": {
-        "arm_speed": 0.0,
-        "total_speed": 0.0,
-        "off_axis_spin_deg": 0.0,
-        "wrist_throw_penalty": 0.0,
-        "rot_per_sec": 0.0,
-        "pot_speed_from_rot": 0.0,
-        "speed_from_arm": 0.0,
-        "speed_from_movement": 0.0,
-        "speed_from_wrist": 0.0,
-        "wrist_align_to_throw_deg": 0.0,
-        "throw_align_to_movement_deg": 0.0,
-        "off_axis_penalty": 0.0,
-        "throw_move_penalty": 0.0
+    <a href="#last_throw">"last_throw"</a>: {
+        <a href="#last_throwarm_speed">"arm_speed"</a>: 0.0,
+        <a href="#last_throwtotal_speed">"total_speed"</a>: 0.0,
+        <a href="#last_throwoff_axis_spin_deg">"off_axis_spin_deg"</a>: 0.0,
+        <a href="#last_throwwrist_throw_penalty">"wrist_throw_penalty"</a>: 0.0,
+        <a href="#last_throwrot_per_sec">"rot_per_sec"</a>: 0.0,
+        <a href="#last_throwpot_speed_from_rot">"pot_speed_from_rot"</a>: 0.0,
+        <a href="#last_throwspeed_from_arm">"speed_from_arm"</a>: 0.0,
+        <a href="#last_throwsoeed_from_movement">"speed_from_movement"</a>: 0.0,
+        <a href="#last_throwspeed_from_wrist">"speed_from_wrist"</a>: 0.0,
+        <a href="#last_throwwrist_align_to_throw_deg">"wrist_align_to_throw_deg"</a>: 0.0,
+        <a href="#last_throwthrow_align_to_movement_deg">"throw_align_to_movement_deg"</a>: 0.0,
+        <a href="#last_throwoff_axis_penalty">"off_axis_penalty"</a>: 0.0,
+        <a href="#last_throwthrow_move_penalty">"throw_move_penalty"</a>: 0.0
     },
-    "last_score": {
-        "disc_speed": 0.0,
-        "team": "orange",
-        "goal_type": "SLAM DUNK",
-        "point_amount": 2,
-        "distance_thrown": 0.40054435,
-        "person_scored": "Bob",
-        "assist_scored": "[INVALID]"
+    <a href="#last_score">"last_score"</a>: {
+        <a href="#last_scoredisc_speed">"disc_speed"</a>: 0.0,
+        <a href="#last_scoreteam">"team"</a>: "orange",
+        <a href="#last_scoregoal_type">"goal_type"</a>: "SLAM DUNK",
+        <a href="#last_scorepoint_amount">"point_amount"</a>: 2,
+        <a href="#last_scoredistance_thrown">"distance_thrown"</a>: 0.40054435,
+        <a href="#last_scoreperson_scored">"person_scored"</a>: "Bob",
+        <a href="#last_scoreassist_scored">"assist_scored"</a>: "[INVALID]"
     },
-    "disc": {
-        "position": [
+    <a href="#disc">"disc"</a>: {
+        <a href="#discposition">"position"</a>: [
             0.0,
             0.0,
             0.0
         ],
-        "forward": [
+        <a href="#discforward">"forward"</a>: [
             0.0,
             0.0,
             1.0
         ],
-        "left": [
+        <a href="#discleft">"left"</a>: [
             1.0,
             0.0,
             0.0
         ],
-        "up": [
+        <a href="#discup">"up"</a>: [
             0.0,
             1.0,
             0.0
         ],
-        "velocity": [
+        <a href="#discvelocity">"velocity"</a>: [
             0.0,
             0.0,
             0.0
         ],
-        "bounce_count": 0
+        <a href="#discbounce_count">"bounce_count"</a>: 0
     },
     "player": {
         "vr_left": [
