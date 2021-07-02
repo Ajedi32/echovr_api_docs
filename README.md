@@ -729,15 +729,19 @@ A "session" is what users typically think of as the "server" you're playing on. 
 This section is for community suggestions and common issues
 
 ### Requests
+Requests list for additions to the API
 * sample request
 
 ### Issues
+Issues list for the API
 * sample issue
 
 ### Quirks
+List of things that don't do quite what you expect but still work
 * something like team name isn't always orange or blue
 
 ### TODO
+Things that need doing in the wiki
 * shoulder_pressed values and description
 * restart request is int?
 * fill in last throw values
