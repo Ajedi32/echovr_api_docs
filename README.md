@@ -32,7 +32,7 @@ Example response (formatted for readability):
     <a href="#private_match">"private_match"</a>: false,
     <a href="#total_round_count">"total_round_count"</a>: 1,
     <a href="#blue_round_score">"blue_round_score"</a>: 0,
-    <a href="#orange_round_count">"orange_round_score"</a>: 0,
+    <a href="#orange_round_score">"orange_round_score"</a>: 0,
     <a href="#blue_points">"blue_points"</a>: 2,
     <a href="#orange_points">"orange_points"</a>: 4,
     <a href="#tournament_match">"tournament_match"</a>: false,
@@ -62,7 +62,7 @@ Example response (formatted for readability):
         <a href="#last_throwrot_per_sec">"rot_per_sec"</a>: 0.0,
         <a href="#last_throwpot_speed_from_rot">"pot_speed_from_rot"</a>: 0.0,
         <a href="#last_throwspeed_from_arm">"speed_from_arm"</a>: 0.0,
-        <a href="#last_throwsoeed_from_movement">"speed_from_movement"</a>: 0.0,
+        <a href="#last_throwspeed_from_movement">"speed_from_movement"</a>: 0.0,
         <a href="#last_throwspeed_from_wrist">"speed_from_wrist"</a>: 0.0,
         <a href="#last_throwwrist_align_to_throw_deg">"wrist_align_to_throw_deg"</a>: 0.0,
         <a href="#last_throwthrow_align_to_movement_deg">"throw_align_to_movement_deg"</a>: 0.0,
@@ -106,162 +106,162 @@ Example response (formatted for readability):
         ],
         <a href="#discbounce_count">"bounce_count"</a>: 0
     },
-    "player": {
-        "vr_left": [
+    <a href="#player">"player"</a>: {
+        <a href="#playervr_left">"vr_left"</a>: [
             0.78700006,
             0.072000004,
             0.61300004
         ],
-        "vr_position": [
+        <a href="#playervr_position">"vr_position"</a>: [
             -3.9650002,
             2.2310002,
             -34.506001
         ],
-        "vr_forward": [
+        <a href="#playervr_forward">"vr_forward"</a>: [
             -0.61700004,
             0.091000006,
             0.78200006
         ],
-        "vr_up": [
+        <a href="#playervr_up">"vr_up"</a>: [
             0.0,
             0.99300003,
             -0.116
         ]
     },
-    "teams": [
+    <a href="#teams">"teams"</a>: [
         {
-            "team": "BLUE TEAM",
-            "possession": false,
-            "stats": {
-                "points": 2,
-                "possession_time": 32.055771,
-                "interceptions": 0,
-                "blocks": 0,
-                "steals": 1,
-                "catches": 0,
-                "passes": 0,
-                "saves": 3,
-                "goals": 0,
-                "stuns": 6,
-                "assists": 1,
-                "shots_taken": 0
+            <a href="#teamsteam">"team"</a>: "BLUE TEAM",
+            <a href="#teamspossession">"possession"</a>: false,
+            <a href="#teamsstats">"stats"</a>: {
+                <a href="#teamsstatspoints">"points"</a>: 2,
+                <a href="#teamsstatspossession_time">"possession_time"</a>: 32.055771,
+                <a href="#teamsstatsinterceptions">"interceptions"</a>: 0,
+                <a href="#teamsstatsblocks">"blocks"</a>: 0,
+                <a href="#teamsstatssteals">"steals"</a>: 1,
+                <a href="#teamsstatscatches">"catches"</a>: 0,
+                <a href="#teamsstatspasses">"passes"</a>: 0,
+                <a href="#teamsstatssaves">"saves"</a>: 3,
+                <a href="#teamsstatsgoals">"goals"</a>: 0,
+                <a href="#teamsstatsstuns">"stuns"</a>: 6,
+                <a href="#teamsstatsassists">"assists"</a>: 1,
+                <a href="#teamsstatsshots_taken">"shots_taken"</a>: 0
                 },
-            "players": [
+            <a href="#teamsplayers">"players"</a>: [
                 {
-                    "name": "Timemaster111",
-                    "playerid": 0,
-                    "userid": 3561909181390317,
-                    "number": 5,
-                    "level": 50,
-                    "ping": 48,
-                    "stunned": false,
-                    "invulnerable": false,
-                    "possession": false,
-                    "holding_left": "none",
-                    "holding_right": "none",
-                    "blocking": false,
-                    "stats": {
-                        "possession_time": 8.9302616,
-                        "points": 0,
-                        "saves": 1,
-                        "goals": 0,
-                        "stuns": 3,
-                        "passes": 0,
-                        "catches": 0,
-                        "steals": 0,
-                        "blocks": 0,
-                        "interceptions": 0,
-                        "assists": 0,
-                        "shots_taken": 0
+                    <a href="#teamsplayersname">"name"</a>: "Timemaster111",
+                    <a href="#teamsplayersplayerid">"playerid"</a>: 0,
+                    <a href="#teamsplayersuserid">"userid"</a>: 3561909181390317,
+                    <a href="#teamsplayersnumber">"number"</a>: 5,
+                    <a href="#teamsplayerslevel">"level"</a>: 50,
+                    <a href="#teamsplayersping">"ping"</a>: 48,
+                    <a href="#teamsplayersstunned">"stunned"</a>: false,
+                    <a href="#teamsplayersinvulnerable">"invulnerable"</a>: false,
+                    <a href="#teamsplayerspossession">"possession"</a>: false,
+                    <a href="#teamsplayersholding_left">"holding_left"</a>: "none",
+                    <a href="#teamsplayersholding_right">"holding_right"</a>: "none",
+                    <a href="#teamsplayersblocking">"blocking"</a>: false,
+                    <a href="#teamsplayersstats">"stats"</a>: {
+                        <a href="#teamsstatspossession_time">"possession_time"</a>: 8.9302616,
+                        <a href="#teamsstatspoints">"points"</a>: 0,
+                        <a href="#teamsstatssaves">"saves"</a>: 1,
+                        <a href="#teamsstatsgoals">"goals"</a>: 0,
+                        <a href="#teamsstatsstuns">"stuns"</a>: 3,
+                        <a href="#teamsstatspasses">"passes"</a>: 0,
+                        <a href="#teamsstatscatches">"catches"</a>: 0,
+                        <a href="#teamsstatssteals">"steals"</a>: 0,
+                        <a href="#teamsstatsblocks">"blocks"</a>: 0,
+                        <a href="#teamsstatsinterceptions">"interceptions"</a>: 0,
+                        <a href="#teamsstatsassists">"assists"</a>: 0,
+                        <a href="#teamsstatsshots_taken">"shots_taken"</a>: 0
                     },
-                    "velocity": [
+                    <a href="#teamsplayersvelocity">"velocity"</a>: [
                         0.48200002,
                         0.83300006,
                         -2.3240001
                     ],
-                    "head": {
-                        "position": [
+                    <a href="#teamsplayershead">"head"</a>: {
+                        <a href="#teamsplayersheadposition">"position"</a>: [
                             -2.1360002,
                             2.098,
                             -33.876003
                         ],
-                        "forward": [
+                        <a href="#teamsplayersheadforward">"forward"</a>: [
                             0.14600001,
                             -0.36400002,
                             0.92000002
                         ],
-                        "left": [
+                        <a href="#teamsplayersheadleft">"left"</a>: [
                             0.98400003,
                             -0.045000002,
                             -0.17400001
                         ],
-                        "up": [
+                        <a href="#teamsplayershead"></a>"up": [
                             0.105,
                             0.93000007,
                             0.35200003
                         ]
                     },
-                    "body": {
-                        "position": [
+                    <a href="#teamsplayersbody">"body"</a>: {
+                        <a href="#teamsplayersbodyposition">"position"</a>: [
                             -2.1360002,
                             2.098,
                             -33.876003
                         ],
-                        "forward": [
+                        <a href="#teamsplayersbodyforward">"forward"</a>: [
                             0.296,
                             0.001,
                             0.95500004
                         ],
-                        "left": [
+                        <a href="#teamsplayersbodyleft">"left"</a>: [
                             0.95500004,
                             -0.0020000001,
                             -0.296
                         ],
-                        "up": [
+                        <a href="#teamsplayersbodyup">"up"</a>: [
                             0.001,
                             1.0,
                             -0.001
                         ]
                     },
-                    "rhand": {
-                        "pos": [
+                    <a href="#teamsplayersrhand">"rhand"</a>: {
+                        <a href="#teamsplayersrhandpos">"pos"</a>: [
                             -2.3390002,
                             1.8030001,
                             -33.733002
                         ],
-                        "forward": [
+                        <a href="#teamsplayersrhandforward">"forward"</a>: [
                             -0.259,
                             0.74000001,
                             0.62
                         ],
-                        "left": [
+                        <a href="#teamsplayersrhandleft">"left"</a>: [
                             0.80900002,
                             -0.18400002,
                             0.55800003
                         ],
-                        "up": [
+                        <a href="#teamsplayersrhandup">"up"</a>: [
                             0.52700001,
                             0.64700001,
                             -0.55200005
                         ]
                     },
-                    "lhand": {
-                        "pos": [
+                    <a href="#teamsplayerslhand">"lhand"</a>: {
+                        <a href="#teamsplayerslhandpos">"pos": [
                             -2.0700002,
                             1.8610001,
                             -33.788002
                         ],
-                        "forward": [
+                        <a href="#teamsplayerslhandforward">"forward"</a>: [
                             -0.44800001,
                             0.73100001,
                             0.51500005
                         ],
-                        "left": [
+                        <a href="#teamsplayerslhandleft">"left"</a>: [
                             0.89200002,
                             0.32200003,
                             0.317
                         ],
-                        "up": [
+                        <a href="#teamsplayerslhandup">"up"</a>: [
                             0.066,
                             0.60100001,
                             -0.79600006
@@ -274,11 +274,11 @@ Example response (formatted for readability):
             ]
         },
         {
-            "team": "ORANGE TEAM",
+            <a href="#teams">"team"</a>: "ORANGE TEAM",
             /* ... same as blue team ... */
         },
         {
-            "team": "SPECTATORS",
+            <a href="#teams">"team"</a>: "SPECTATORS",
             /* ... same as blue team ... */
         }
     ]
@@ -305,6 +305,8 @@ Possible values:
 
 * `"Echo_Arena_Private"`
 * `"Echo_Arena"`
+* `"Echo_Combat"`
+* `"Echo_Combat_Private"`
 * `"Social_2.0"`
 * `"INVALID GAMETYPE"`
 * Combat
@@ -327,7 +329,7 @@ Current game time in seconds.
 #### `game_clock_display`
 Current game time as shown in game.
 
-#### `private match`
+#### `private_match`
 Whether the current session is a private lobby.
 
 #### `total_round_count`
@@ -422,7 +424,7 @@ Team and player currently in possession of the disc.
 `possession[0]` is the team in possession and `possession[1]` is the player in that team. 
 
 #### `last_throw`
-Info about the last throw made in game.
+Info about the last throw made in game by the client user.
 
 #### `last_throw.arm_speed`
 Speed of the arm during the last throw.
@@ -447,7 +449,7 @@ Combination of all speed factors that went into the disc.
 
 #### `last_throw.wrist_align_to_throw_deg`
 
-#### `last_throw.throw_align_to_movement_drag`
+#### `last_throw.throw_align_to_movement_deg`
 
 #### `last_throw.off_axis_penalty`
 
@@ -736,12 +738,10 @@ This section is for community suggestions and common issues
 * something like team name isn't always orange or blue
 
 ### TODO
-* Combat
-* shoulder_pressed
+* shoulder_pressed values and description
 * restart request is int?
-* check last_throw is local or not
 * fill in last throw values
-* find values of possession
 * last_score.team value confirmation
 * check if teams[].players[].number still applies without number decal
+* add in stuff like `[position](#position-1)`
 * Keep updating
