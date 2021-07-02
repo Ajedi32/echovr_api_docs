@@ -20,13 +20,14 @@ This repository aims to document all the functionality of this API.
 This returns a detailed representation of the current state of the match. The response is a JSON string, which can be parsed with any standard JSON parser.
 
 Example response (formatted for readability):
+
 <pre>
 {
     <a href="#client_name">"client_name"</a>: "Timemaster111",
     <a href="#sessionid">"sessionid"</a>: "1C32B3DA-F1F6-4B17-8BAE-FD1BC59C28BD",
     <a href="#sessionip">"sessionip"</a>: "184.154.39.222",
-    <a href="#match_type">"match_type"</a>: "Echo_Arena",
-    <a href="#map_name">"map_name"</a>: "mpl_arena_a",
+    <a href="#match_type">"match_type"</a>: "Echo_Arena", // "Echo_Arena_Private", "Echo_Arena", "Echo_Combat", "Echo_Combat_Private", "Social_2.0", "INVALID GAMETYPE"
+    <a href="#map_name">"map_name"</a>: "mpl_arena_a", // "mpl_arena_a", "mpl_lobby_b2", mpl_combat_dyson, mpl_combat_combustion, mpl_combat_fission, mpl_combat_gauss, "INVALID LEVEL"
     <a href="#game_clock">"game_clock"</a>: 215.09978,
     <a href="#game_clock_display">"game_clock_display"</a>: "03:35.09",
     <a href="#private_match">"private_match"</a>: false,
@@ -42,11 +43,11 @@ Example response (formatted for readability):
     <a href="#right_shoulder_pressed2">"right_shoulder_pressed2"</a>: 0.0,
     <a href="#left_shoulder_pressed">"left_shoulder_pressed"</a>: 0.0,
     <a href="#left_shoulder_pressed2">"left_shoulder_pressed2"</a>: 0.0,
-    <a href="#game_status">"game_status"</a>: "score",
+    <a href="#game_status">"game_status"</a>: "score", // "pre_match", "round_start", "playing", "score", "round_over", "round_start", "post_match", "pre_sudden_death", "sudden_death", "post_sudden_death"
     <a href="#pause">"pause"</a>: {
-        <a href="#pausepaused_state">"paused_state"</a>: "unpaused",
-        <a href="#pauseunpaused_team">"unpaused_team"</a>: "none",
-        <a href="#pausepaused_requested_team">"paused_requested_team"</a>: "none",
+        <a href="#pausepaused_state">"paused_state"</a>: "unpaused", // "unpaused", "unpausing", "paused", "paused_requested"
+        <a href="#pauseunpaused_team">"unpaused_team"</a>: "none", // "orange", "blue", "none"
+        <a href="#pausepaused_requested_team">"paused_requested_team"</a>: "none", // "orange", "blue", "none"
         <a href="#pauseunpaused_timer">"unpaused_timer"</a>: 0.0,
         <a href="#pausepaused_timer">"paused_timer"</a>: 0.0
     },
@@ -71,8 +72,8 @@ Example response (formatted for readability):
     },
     <a href="#last_score">"last_score"</a>: {
         <a href="#last_scoredisc_speed">"disc_speed"</a>: 0.0,
-        <a href="#last_scoreteam">"team"</a>: "orange",
-        <a href="#last_scoregoal_type">"goal_type"</a>: "SLAM DUNK",
+        <a href="#last_scoreteam">"team"</a>: "orange", // "orange", "blue", "none"
+        <a href="#last_scoregoal_type">"goal_type"</a>: "SLAM DUNK", // "[NO GOAL]", "SLAM DUNK", "INSIDE SHOT", "LONG SHOT", "BOUNCE SHOT", "LONG BOUNCE SHOT"
         <a href="#last_scorepoint_amount">"point_amount"</a>: 2,
         <a href="#last_scoredistance_thrown">"distance_thrown"</a>: 0.40054435,
         <a href="#last_scoreperson_scored">"person_scored"</a>: "Bob",
@@ -145,7 +146,7 @@ Example response (formatted for readability):
                 <a href="#teamsstatsstuns">"stuns"</a>: 6,
                 <a href="#teamsstatsassists">"assists"</a>: 1,
                 <a href="#teamsstatsshots_taken">"shots_taken"</a>: 0
-                },
+            },
             <a href="#teamsplayers">"players"</a>: [
                 {
                     <a href="#teamsplayersname">"name"</a>: "Timemaster111",
@@ -246,7 +247,7 @@ Example response (formatted for readability):
                         ]
                     },
                     <a href="#teamsplayerslhand">"lhand"</a>: {
-                        <a href="#teamsplayerslhandpos">"pos": [
+                        <a href="#teamsplayerslhandpos">"pos":</a> [
                             -2.0700002,
                             1.8610001,
                             -33.788002
@@ -282,9 +283,9 @@ Example response (formatted for readability):
             /* ... same as blue team ... */
         }
     ]
-}
-        
+}  
 </pre>
+
 #### Properties
 
 The response is a JSON object, with the following properties:
@@ -309,7 +310,6 @@ Possible values:
 * `"Echo_Combat_Private"`
 * `"Social_2.0"`
 * `"INVALID GAMETYPE"`
-* Combat
 
 #### `map_name`
 Name of the map being played.
@@ -317,7 +317,7 @@ Name of the map being played.
 Possible values:
 * `"mpl_arena_a"` - Standard Echo Arena map
 * `"mpl_lobby_b2"` - Lobby
-* * `mpl_combat_dyson` - Combat maps
+* `mpl_combat_dyson` - Combat maps
 * `mpl_combat_combustion`
 * `mpl_combat_fission`
 * `mpl_combat_gauss`
@@ -348,7 +348,7 @@ Number of points blue has scored this round.
 Number of points orange has scored this round.
 
 #### `tournament_match`
-TBC
+Whether the current session is being used for an official tournament orchestrated in collaboration with the Echo Arena developers. This is [for possible future integration with ESL and other organized tournaments](https://discordapp.com/channels/326412222119149578/506931756675497986/510566303367430145).
 
 #### `blue_team_restart_request`
 Whether or not the blue team is requesting a restart.
@@ -434,7 +434,6 @@ Combination of all speed factors that went into the disc.
 
 #### `last_throw.off_axis_spin_deg`
 
-
 #### `last_throw.wrist_throw_penalty`
 
 #### `last_throw.rot_per_sec`
@@ -464,9 +463,9 @@ Speed of the disc when it went into the goal.
 #### `last_score.team`
 Team that scored the last goal.
 
-Possible values (TBC):
 * `"blue"`
 * `"orange"`
+* `"none"`
 
 #### `last_score.goal_type`
 A human-readable explanation of the type of goal scored. This is "[NO GOAL]" by default when no goal has been scored.
@@ -599,7 +598,7 @@ A unique number identifying the player across all game sessions.
 #### `teams[].players[].number`
 The number a player chose for themselves in the customization room.
 
-Defaults to `0`
+Need to verify how this works in the new update.
 
 #### `teams[].players[].level`
 A number (1-50) representing the player's experience "level". New accounts start as level 1, and will usually reach level 50 after a few hundred games in public matchmaking.
