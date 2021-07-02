@@ -599,7 +599,7 @@ A unique number identifying the player across all game sessions.
 #### `teams[].players[].number`
 The number a player chose for themselves in the customization room.
 
-Need to verify how this works in the new update.
+Defaults to `0`
 
 #### `teams[].players[].level`
 A number (1-50) representing the player's experience "level". New accounts start as level 1, and will usually reach level 50 after a few hundred games in public matchmaking.
@@ -746,6 +746,5 @@ Things that need doing in the wiki
 * restart request is int?
 * fill in last throw values
 * last_score.team value confirmation
-* check if teams[].players[].number still applies without number decal
 * add in stuff like `[position](#position-1)`
 * Keep updating
