@@ -306,6 +306,10 @@ Possible values:
 * `"Echo_Arena_Private"`
 * `"Echo_Arena"`
 * `"Social_2.0"`
+* `mpl_combat_dyson`
+* `mpl_combat_combustion`
+* `mpl_combat_fission`
+* `mpl_combat_gauss`
 * `"INVALID GAMETYPE"`
 * Combat
 
@@ -352,16 +356,16 @@ Whether or not the blue team is requesting a restart.
 Whether or not the orange team is requesting a restart.
 
 #### `right_shoulder_pressed`
-No clue
+Touch controller input
 
 #### `right_shoulder_pressed2`
-No clue
+Touch controller input
 
 #### `left_shoulder_pressed`
-No clue
+Touch controller input
 
 #### `left_shoulder_pressed2`
-No clue
+Touch controller input
 
 #### `game_status`
 The current game's status.
@@ -386,26 +390,26 @@ Details about whether the game is currently paused.
 Current pause state of the match.
 
 Possible values:
-* `unpaused`
-* `unpausing`
-* `paused`
-* `paused_requested`
+* `"unpaused"`
+* `"unpausing"`
+* `"paused"`
+* `"paused_requested"`
 
 #### `pause.unpaused_team`
-TBC
+Team that unpaused the game.
 
 Possible values:
-* `orange`
-* `blue`
-* `none`
+* `"orange"`
+* `"blue"`
+* `"none"`
 
 #### `pause.paused_requested_team`
 Team that pressed the pause button.
 
 Possible values:
-* `orange`
-* `blue`
-* `none`
+* `"orange"`
+* `"blue"`
+* `"none"`
 
 #### `pause.unpaused_timer`
 Time until gameplay will resume.
@@ -414,7 +418,9 @@ Time until gameplay will resume.
 Time since game was paused.
 
 #### `possession`
-Team and player currently in possession of the disc. subvalues TBC
+Team and player currently in possession of the disc.
+
+`possession[0]` is the team in possession and `possession[1]` is the player in that team. 
 
 #### `last_throw`
 Info about the last throw made in game.
@@ -422,6 +428,275 @@ Info about the last throw made in game.
 #### `last_throw.arm_speed`
 Speed of the arm during the last throw.
 
+#### `last_throw.total_speed`
+Combination of all speed factors that went into the disc.
+
+#### `last_throw.off_axis_spin_deg`
+
+
+#### `last_throw.wrist_throw_penalty`
+
+#### `last_throw.rot_per_sec`
+
+#### `last_throw.pot_speed_from_rot`
+
+#### `last_throw.speed_from_arm`
+
+#### `last_throw.speed_from_movement`
+
+#### `last_throw.speed_from_wrist`
+
+#### `last_throw.wrist_align_to_throw_deg`
+
+#### `last_throw.throw_align_to_movement_drag`
+
+#### `last_throw.off_axis_penalty`
+
+#### `last_throw.throw_move_penalty`
+
+#### `last_score`
+Last score made in the game.
+
+#### `last_score.disc_speed`
+Speed of the disc when it went into the goal.
+
+#### `last_score.team`
+Team that scored the last goal.
+
+Possible values (TBC):
+* `"blue"`
+* `"orange"`
+
+#### `last_score.goal_type`
+A human-readable explanation of the type of goal scored. This is "[NO GOAL]" by default when no goal has been scored.
+
+Possible values:
+
+* `"[NO GOAL]"`
+* `"SLAM DUNK"`
+* `"INSIDE SHOT"`
+* `"LONG SHOT"`
+* `"BOUNCE SHOT"`
+* `"LONG BOUNCE SHOT"`
+
+#### `last_score.point_amount`
+The number of points scored (2 or 3). This is 0 by default when no goal has been scored.
+
+#### `last_score.distance_thrown`
+The distance the goal was scored from. This is 0 by default when no goal has been scored.
+
+#### `last_score.person_scored`
+The username of the player who scored the goal. This is `"[INVALID]"` by default when no goal has been scored since you first joined the match.
+
+#### `last_score.assist_scored`
+The username of the player who assisted the goal. This is `"[INVALID]"` by default when no goal has been scored since you first joined the match, or when a goal was scored, but no player was credited with the assist.
+
+#### `disc`
+An object representing the current state of the disk.
+
+#### `disc.position`
+An array representing the disk's position within the arena.
+
+#### `disc.forward`
+The direction that the disc is facing.
+
+#### `disc.left`
+The direction that the left side of the disc is facing.
+
+#### `disc.up`
+The direction that the top of the disc is facing.
+
+#### `disc.velocity`
+An array representing the disk's velocity.
+
+#### `disc.bounce_count`
+The number of times the disk has bounced. (TODO: Since the last time someone grabbed it? Do headbutts count as bounces?)
+
+#### `player`
+An object representing the current state of the local VR player. This is used for positions of the player within their playspace.
+
+#### `player.vr_left`
+The direction that the left side of the player's head is facing within their playspace.
+
+#### `player.vr_position`
+An array representing the player's position within their playspace.
+
+#### `player.vr_forward`
+The direction that the player's head is facing within their playspace.
+
+#### `player.vr_up`
+The direction that the top side of the player's head is facing within their playspace.
+
+#### `teams`
+An array of objects containing data used to instantiate the game's two teams. The first element in the array is always the blue team, while the second is always the orange team and the third is always the spectators.
+
+#### `teams[].team`
+A human-readable team name. Usually either "ORANGE TEAM" or "BLUE TEAM", but if all the players on a team have the same team name (set by pressing F11 while in a match or the lobby) it will be that instead.
+
+#### `teams[].possession`
+Indicated whethe this team currently has possession of the disk.
+
+#### `teams[].stats`
+An object containing data used to instantiate the team's current stats.
+
+#### `teams[].stats.points`
+Points scored by the subject.
+
+#### `teams[].stats.possession_time`
+Time in seconds that the subject possessed the disk.
+
+#### `teams[].stats.interceptions`
+Number of times the subject intercepted a pass by the opposing team
+
+API always returns zero for teams
+
+#### `teams[].stats.blocks`
+Number of times the subject blocked a punch
+
+API always returns zero for teams
+
+#### `teams[].stats.steals`
+Number of times the subject stole the disk from the opposing team
+
+#### `teams[].stats.catches`
+Number of times the subject successfully caught a pass by a team member
+
+#### `teams[].stats.passes`
+Number of times the subject successfully completed a pass
+
+API always returns zero for teams
+
+#### `teams[].stats.saves`
+Number of opposing team goals prevented by the subject.
+
+#### `teams[].stats.goals`
+Number of goals scored by the subject.
+
+API always returns zero for teams
+
+#### `teams[].stats.stuns`
+Number of times the subject has stunned the opposing team.
+
+#### `teams[].stats.assists`
+Number of goals assisted by the subject.
+
+#### `teams[].stats.shots_taken`
+Number of times the subject attempted a shot on goal
+
+#### `teams[].players`
+An array of objects containing data used to instantiate the team's players.
+
+#### `teams[].players[].name`
+The username of the player.
+
+#### `teams[].players[].playerid`
+A number representing ID of the player within the current game session.
+
+#### `teams[].players[].userid`
+A unique number identifying the player across all game sessions.
+
+#### `teams[].players[].number`
+The number a player chose for themselves in the customization room.
+
+Need to verify how this works in the new update.
+
+#### `teams[].players[].level`
+A number (1-50) representing the player's experience "level". New accounts start as level 1, and will usually reach level 50 after a few hundred games in public matchmaking.
+
+Note that there a rare bug where this number may be 0 in the UI in some cases; it's possible this bug may also affect the API (though this has yet to be verified).
+
+#### `teams[].players[].ping`
+Current ping (network latency to server) of this player.
+
+#### `teams[].players[].stunned`
+Whether the player is currently stunned.
+
+#### `teams[].players[].invulnerable`
+Whether or not the player is currently immune to stuns. Players will be in this state for 3 seconds after they are stunned.
+
+#### `teams[].players[].possession`
+Indicates whether this player currently has possession of the disk.
+
+#### `teams[].players[].holding_left`
+The item or object the player is holding in their left hand.
+
+Possible values:
+* TBC
+
+#### `teams[].players[].holding_right`
+The item or object the player is holding in their right hand.
+
+Possible values:
+* TBC
+
+#### `teams[].players[].blocking`
+Whether the player is currently blocking (and will therefore deflect stuns).
+
+#### `teams[].players[].stats`
+An object containing data used to instantiate the player's current stats. See teams[].stats for a list of available stats.
+
+#### `teams[].players[].velocity`
+The current velocity (speed and direction of movement) of the player.
+
+#### `teams[].players[].head`
+An object containing position and rotation of the head of the player
+
+#### `teams[].players[].head.position`
+The position of the player's head in the arena.
+
+#### `teams[].players[].head.forward`
+The direction that the player's head is facing.
+
+#### `teams[].players[].head.left`
+The direction that the left side of the player's head is facing.
+
+#### `teams[].players[].head.up`
+The direction that the top side of the player's head is facing.
+
+#### `teams[].players[].body`
+An object containing position and rotation of the body of the player
+
+#### `teams[].players[].body.position`
+The position of the player's body in the arena.
+
+#### `teams[].players[].body.forward`
+The direction that the player's body is facing.
+
+#### `teams[].players[].body.left`
+The direction that the left side of the player's body is facing.
+
+#### `teams[].players[].body.up`
+The direction that the top side of the player's body is facing.
+
+#### `teams[].players[].rhand`
+An object containing position and rotation data for the right hand.
+
+#### `teams[].players[].rhand.pos`
+The position of the player's right hand within the arena.
+
+#### `teams[].players[].rhand.forward`
+The direction that the player's right hand is facing.
+
+#### `teams[].players[].rhand.left`
+The direction that the left side of the player's right hand is facing.
+
+#### `teams[].players[].rhand.up`
+The direction that the top side of the player's right hand is facing.
+
+#### `teams[].players[].lhand`
+An object containing position and rotation data for the left hand.
+
+#### `teams[].players[].lhand.pos`
+The position of the player's left hand within the arena.
+
+#### `teams[].players[].lhand.forward`
+The direction that the player's left hand is facing.
+
+#### `teams[].players[].lhand.left`
+The direction that the left side of the player's left hand is facing.
+
+#### `teams[].players[].lhand.up`
+The direction that the top side of the player's left hand is facing.
 
 ## Concepts
 Throughout the API there are a number of concepts that get reused in multiple places. These concepts are documented in this section.
@@ -462,6 +737,9 @@ This section is for community suggestions and common issues
 * shoulder_pressed
 * restart request is int?
 * check last_throw is local or not
+* fill in last throw values
 * find values of possession
-* pause values
+* last_score.team value confirmation
+* check if teams[].players[].number still applies without number decal
+* holding_left/right
 * Keep updating
