@@ -20,15 +20,15 @@ This repository aims to document all the functionality of this API.
 This returns a detailed representation of the current state of the match. The response is a JSON string, which can be parsed with any standard JSON parser.
 
 Example response (formatted for readability):
-```
+<pre>
 {
-    "client_name": "Timemaster111",
-    "sessionid": "1C32B3DA-F1F6-4B17-8BAE-FD1BC59C28BD",
-    "sessionip": "184.154.39.222",
-    "match_type": "Echo_Arena",
-    "map_name": "mpl_arena_a",
-    "game_clock": 215.09978,
-    "game_clock_display": "03:35.09",
+    <a href="#client_name">"client_name"</a>: "Timemaster111",
+    <a href="#sessionid">"sessionid"</a>: "1C32B3DA-F1F6-4B17-8BAE-FD1BC59C28BD",
+    <a href="#sessionip">"sessionip"</a>: "184.154.39.222",
+    <a href="#match_type">"match_type"</a>: "Echo_Arena",
+    <a href="#map_name">"map_name"</a>: "mpl_arena_a",
+    <a href="#game_clock">"game_clock"</a>: 215.09978,
+    <a href="#game_clock_display">"game_clock_display"</a>: "03:35.09",
     "private_match": false,
     "total_round_count": 1,
     "blue_round_score": 0,
@@ -284,7 +284,7 @@ Example response (formatted for readability):
     ]
 }
         
-```
+</pre>
 #### Properties
 
 The response is a JSON object, with the following properties:
@@ -306,10 +306,6 @@ Possible values:
 * `"Echo_Arena_Private"`
 * `"Echo_Arena"`
 * `"Social_2.0"`
-* `mpl_combat_dyson`
-* `mpl_combat_combustion`
-* `mpl_combat_fission`
-* `mpl_combat_gauss`
 * `"INVALID GAMETYPE"`
 * Combat
 
@@ -319,8 +315,11 @@ Name of the map being played.
 Possible values:
 * `"mpl_arena_a"` - Standard Echo Arena map
 * `"mpl_lobby_b2"` - Lobby
+* * `mpl_combat_dyson` - Combat maps
+* `mpl_combat_combustion`
+* `mpl_combat_fission`
+* `mpl_combat_gauss`
 * `"INVALID LEVEL"`
-* Combat maps
 
 #### `game_clock`
 Current game time in seconds.
@@ -637,7 +636,7 @@ Possible values:
 Whether the player is currently blocking (and will therefore deflect stuns).
 
 #### `teams[].players[].stats`
-An object containing data used to instantiate the player's current stats. See teams[].stats for a list of available stats.
+An object containing data used to instantiate the player's current stats. See [`teams[].stats`](#teamsstats) for a list of available stats.
 
 #### `teams[].players[].velocity`
 The current velocity (speed and direction of movement) of the player.
