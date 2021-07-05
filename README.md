@@ -729,7 +729,7 @@ This section is for community suggestions and common issues
 
 ### Requests
 Requests list for additions to the API
-* sample request
+* position of the local (remote if networked) player(s) exlcuding irl playspace (position of player using boosts and thrusters and not jumps and ducks)
 
 ### Issues
 Issues list for the API
