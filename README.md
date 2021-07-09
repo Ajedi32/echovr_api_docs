@@ -43,6 +43,7 @@ Example response (formatted for readability):
     <a href="#right_shoulder_pressed2">"right_shoulder_pressed2"</a>: 0.0,
     <a href="#left_shoulder_pressed">"left_shoulder_pressed"</a>: 0.0,
     <a href="#left_shoulder_pressed2">"left_shoulder_pressed2"</a>: 0.0,
+    <a href="#packet_loss_ratio">"packet_loss_ratio"</a>: TBC,
     <a href="#game_status">"game_status"</a>: "score", // "pre_match", "round_start", "playing", "score", "round_over", "round_start", "post_match", "pre_sudden_death", "sudden_death", "post_sudden_death"
     <a href="#pause">"pause"</a>: {
         <a href="#pausepaused_state">"paused_state"</a>: "unpaused", // "unpaused", "unpausing", "paused", "paused_requested"
@@ -73,7 +74,7 @@ Example response (formatted for readability):
     <a href="#last_score">"last_score"</a>: {
         <a href="#last_scoredisc_speed">"disc_speed"</a>: 0.0,
         <a href="#last_scoreteam">"team"</a>: "orange", // "orange", "blue", "none"
-        <a href="#last_scoregoal_type">"goal_type"</a>: "SLAM DUNK", // "[NO GOAL]", "SLAM DUNK", "INSIDE SHOT", "LONG SHOT", "BOUNCE SHOT", "LONG BOUNCE SHOT"
+        <a href="#last_scoregoal_type">"goal_type"</a>: "SLAM DUNK", // "[NO GOAL]", "SLAM DUNK", "INSIDE SHOT", "LONG SHOT", "BOUNCE SHOT", "LONG BOUNCE SHOT", "BUMPER_SHOT" (TBC)
         <a href="#last_scorepoint_amount">"point_amount"</a>: 2,
         <a href="#last_scoredistance_thrown">"distance_thrown"</a>: 0.40054435,
         <a href="#last_scoreperson_scored">"person_scored"</a>: "Bob",
@@ -368,6 +369,9 @@ Touch controller input
 #### `left_shoulder_pressed2`
 Touch controller input
 
+#### `packet_loss_ratio`
+Number of packets missed bu the client out of the total number of packets sent by the server in a 5 second window.
+
 #### `game_status`
 The current game's status.
 
@@ -465,7 +469,6 @@ Team that scored the last goal.
 
 * `"blue"`
 * `"orange"`
-* `"none"`
 
 #### `last_score.goal_type`
 A human-readable explanation of the type of goal scored. This is "[NO GOAL]" by default when no goal has been scored.
@@ -478,6 +481,7 @@ Possible values:
 * `"LONG SHOT"`
 * `"BOUNCE SHOT"`
 * `"LONG BOUNCE SHOT"`
+* `"BUMPER_SHOT"` (TBC)
 
 #### `last_score.point_amount`
 The number of points scored (2 or 3). This is 0 by default when no goal has been scored.
@@ -730,10 +734,11 @@ This section is for community suggestions and common issues
 ### Requests
 Requests list for additions to the API
 * position of the local (remote if networked) player(s) exlcuding irl playspace (position of player using boosts and thrusters and not jumps and ducks)
+* private games rules set
 
 ### Issues
 Issues list for the API
-* sample issue
+* interceptions are not reported correctly
 
 ### Quirks
 List of things that don't do quite what you expect but still work
@@ -741,9 +746,9 @@ List of things that don't do quite what you expect but still work
 
 ### TODO
 Things that need doing in the wiki
+* packet_loss_ratio stuff
+* bumper_shot confirm
 * shoulder_pressed values and description
-* restart request is int?
 * fill in last throw values
-* last_score.team value confirmation
 * add in stuff like `[position](#position-1)`
 * Keep updating
